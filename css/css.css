@@ -1,4 +1,14 @@
 
+body{
+	font-family: 微软雅黑;
+	color: #FFFFFF;
+}
+
+a{
+	color: #FFFFFF;
+}
+
+
 #background_shadow{
 	position: fixed;
 	width: 100%;
@@ -14,7 +24,267 @@
 	vertical-align: middle;
 }
 
-#id{
+#nav{
 	position: fixed;
-	
+	left: 6.5%;
+	width: 13%;
+	max-width: 205px;
+	min-width: 190px;
+	height: 100%;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0) 78%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.29)), color-stop(78%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.29) 0%,rgba(0,0,0,0) 78%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0.29) 0%,rgba(0,0,0,0) 78%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.29) 0%,rgba(0,0,0,0) 78%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.29) 0%,rgba(0,0,0,0) 78%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#00000000',GradientType=0 );
+}
+
+#nav p{
+	text-align: center;
+	margin:30px 0;
+	font-size: 350%;
+}
+
+#nav ul{
+	text-align: center;
+	font-size: 120%;
+}
+
+#nav a{
+	display: block;
+    text-decoration: none;
+	padding-top:5px;
+	width:100%;
+	height: 35px;
+}
+
+#nav > a{
+    display: block;
+    width:100%;
+    height: 130px;
+}
+
+#nav a:hover{
+	background-color: rgba(0,0,0,0.3);
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#main_content{
+	position: absolute  ;
+	width: 72%;
+	margin-left: 23%;
+}
+
+#welcome{
+	width: 100%;
+	height: 100%;
+	text-align: right;
+	margin:35% 0;
+}
+
+#welcome h1{
+	font-size: 350%;
+	margin-bottom: 10px;
+}
+
+#welcome p{
+	font-size:130%;
+}
+
+#instruction{
+	width: 100%;
+	height: 100%;
+	text-align: right;
+	margin:39% 0;
+}
+
+#instruction h1{
+	font-size: 350%;
+	margin-bottom: 50px;
+}
+
+#instruction p{
+	font-size:130%;
+	line-height: 160%;
+}
+
+.block_img{
+	width: 48px;
+	height: 48px;
+	background: url('../img/combined.png') no-repeat top left;
+	float: left;
+	/*margin: 0 10px 5px 0;*/
+}
+
+#feature{
+	width: 100%;
+	height: 100%;
+	margin:35% 0;
+	margin-left: 30px;
+}
+
+#feature h2{
+	font-size: 180%;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+#feature h4{
+	font-size: 110%;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+#feature h3{
+	font-size: 130%;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+
+.block h3,p{
+	margin-left: 60px;
+}
+
+.row{
+	margin-bottom: 20px;
+}
+
+.block{
+	width:30%;
+	display: inline-block;
+	margin-left: 15px;
+	vertical-align: top;
+}
+
+.icon1{
+	background-position: -1px -1461px;
+}
+
+.icon2{
+	background-position: -98px 0;
+}
+
+.icon3{
+	background-position: -98px -588px;
+}
+
+.icon4{
+	background-position: 0 0;
+}
+
+.icon5{
+	background-position: 0 -1265px;
+}
+
+.icon6{
+	background-position: 0 -1069px;
+}
+
+#convenient{
+	width: 100%;
+	height: 100%;
+    margin:35% 0;
+	margin-left: 30px;
+}
+
+#convenient h2{
+	font-size: 180%;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+#convenient h4{
+	font-size: 110%;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+#convenient p{
+    margin:8px 0;
+    display: block;
+}
+
+.download{
+	width: 40%;
+	border: dotted #FFFFFF 2px;
+	padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 250px;
+    margin-left: 5%;
+}
+
+.dl_head img{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.dl_head h1{
+	vertical-align: top;
+	display: inline-block;
+	font-size: 200%;
+}
+
+.download li{
+    list-style-position: inside;
+    list-style-type:disc;
+}
+
+.download li a{
+    color: aquamarine;
+    text-decoration: underline;
+}
+
+.button{
+    margin:10px 0;
+    text-align: center;
+    display: block;
+    border: solid #FFFFFF 1px;
+    font-size: 150%;
+    margin-left:30px;
+    border-radius: 30%;
+    width: 180px;
+}
+
+.button:hover{
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+#contact{
+    width: 100%;
+    height: 100%;
+    margin:35% 0;
+    margin-left: 30px;
+}
+
+.content{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5%;
+}
+
+.content h1{
+    font-size: 180%;
+    line-height: 150%;
+}
+
+.content h2{
+    font-size: 110%;
+    line-height: 150%;
+    margin-bottom:10px;
+}
+
+.content p{
+    margin-left: 0;
+}
+
+.content li{
+    list-style-position: inside;
+    list-style-type:disc;
 }
