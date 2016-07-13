@@ -1,0 +1,15 @@
+
+#background_shadow{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/background-shadow.png');
+	opacity: 0.35;
+	z-index: -1;
+}
+
+#background_img{
+	position: fixed;
+	z-index: -2;
+	vertical-align: middle;
+}
