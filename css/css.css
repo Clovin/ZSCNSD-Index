@@ -8,10 +8,53 @@ a{
 	color: #FFFFFF;
 }
 
+img{
+	display: inline-block;
+}
+
+h1{
+	font-size: 350%;
+	margin-bottom: 10px;
+}
+
+h2{
+	font-size: 190%;
+	line-height: 150%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+h3{
+	font-size: 180%;
+	line-height: 150%;
+}
+
+h4{
+	font-size: 160%;
+}
+
+p{
+	/*font-size:120%;*/
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	/*margin:8px 0;*/
+}
+
 /*每个内容区通用的属性*/
 .contentBlock {
     width: 100%;
     height: 100%;
+	margin: 35% 0;
+}
+
+.side{
+	position: fixed;
+	left: 6.5%;
+	width: 13%;
+	max-width: 205px;
+	min-width: 190px;
+	text-align: center;
 }
 
 #background_shadow{
@@ -30,11 +73,11 @@ a{
 }
 
 #nav{
-	position: fixed;
-	left: 6.5%;
-	width: 13%;
-	max-width: 205px;
-	min-width: 190px;
+	/*position: fixed;*/
+	/*left: 6.5%;*/
+	/*width: 13%;*/
+	/*max-width: 205px;*/
+	/*min-width: 190px;*/
 	height: 100%;
 	background: -moz-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0) 78%, rgba(0,0,0,0) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.29)), color-stop(78%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
@@ -46,13 +89,13 @@ a{
 }
 
 #nav p{
-	text-align: center;
+	/*text-align: center;*/
 	margin:30px 0;
 	font-size: 350%;
 }
 
 #nav ul{
-	text-align: center;
+	/*text-align: center;*/
 	font-size: 120%;
 }
 
@@ -81,48 +124,41 @@ a{
 
 #welcome{
 	text-align: right;
-	margin:35% 0;
+	/*margin:35% 0;*/
     margin-top: 10%;
 }
 
-#welcome h1{
-	font-size: 350%;
-	margin-bottom: 10px;
-}
-
-/*#welcome h2{*/
-    /*font-size:140%;*/
-    /*width: 40%;*/
+/*#welcome h1{*/
+	/*font-size: 350%;*/
+	/*margin-bottom: 10px;*/
 /*}*/
+
 p span{
     font-size:140%;
     color:cornflowerblue;
 }
 
 #welcome p{
-	font-size:130%;
-    display: inline-block;
-    width: 40%;
-    vertical-align: top;
-    text-align: left;
+	width: 41%;
+	margin-left: 60px;
 }
 
-#welcome img{
-    display: inline-block;
-}
-#welcome a{
-    color: aquamarine;
-}
+/*#welcome img{*/
+    /*display: inline-block;*/
+/*}*/
+/*#welcome a{*/
+    /*color: aquamarine;*/
+/*}*/
 
 #instruction{
 	text-align: right;
-	margin:39% 0;
+	/*margin:39% 0;*/
 }
 
-#instruction h1{
-	font-size: 350%;
-	margin-bottom: 50px;
-}
+/*#instruction h1{*/
+	/*font-size: 350%;*/
+	/*margin-bottom: 50px;*/
+/*}*/
 
 #instruction p{
 	font-size:130%;
@@ -138,32 +174,27 @@ p span{
 }
 
 #feature{
-	margin:35% 0;
+	/*margin:35% 0;*/
 	margin-left: 30px;
 }
 
-#feature h2{
-	font-size: 180%;
-	font-weight: 600;
-	margin-bottom: 4px;
-}
+/*#feature h2{*/
+	/*font-size: 180%;*/
+	/*font-weight: 600;*/
+	/*margin-bottom: 4px;*/
+/*}*/
 
-#feature h4{
-	font-size: 110%;
-	font-weight: 600;
-	margin-bottom: 30px;
-}
+/*#feature h4{*/
+	/*font-size: 130%;*/
+	/*font-weight: 600;*/
+	/*!*margin-bottom: 30px;*!*/
+/*}*/
 
-#feature h3{
-	font-size: 130%;
-	font-weight: 600;
-	margin-bottom: 4px;
-}
-
-
-.block h3,p{
-	margin-left: 60px;
-}
+/*#feature h3{*/
+	/*font-size: 130%;*/
+	/*font-weight: 600;*/
+	/*margin-bottom: 4px;*/
+/*}*/
 
 .row{
 	margin-bottom: 20px;
@@ -173,7 +204,17 @@ p span{
 	width:30%;
 	display: inline-block;
 	margin-left: 15px;
+	/*margin-top:20px;*/
 	vertical-align: top;
+}
+
+#feature h5{
+	margin-bottom: 20px;
+}
+
+.block h4,.block p{
+	margin-left: 60px;
+	/*margin-bottom: 30px;*/
 }
 
 .icon1{
@@ -201,26 +242,26 @@ p span{
 }
 
 #convenient{
-    margin:35% 0;
+    /*margin:35% 0;*/
 	margin-left: 30px;
 }
 
-#convenient h2{
-	font-size: 180%;
-	font-weight: 600;
-	margin-bottom: 4px;
-}
+/*#convenient h2{*/
+	/*font-size: 180%;*/
+	/*font-weight: 600;*/
+	/*margin-bottom: 4px;*/
+/*}*/
 
-#convenient h4{
-	font-size: 110%;
-	font-weight: 600;
+#convenient h5{
+	/*font-size: 110%;*/
+	/*font-weight: 600;*/
 	margin-bottom: 30px;
 }
 
-#convenient p{
-    margin:8px 0;
-    display: block;
-}
+/*#convenient p{*/
+    /*margin:8px 0;*/
+    /*!*display: block;*!*/
+/*}*/
 
 .download{
 	width: 40%;
@@ -233,27 +274,27 @@ p span{
 }
 
 .dl_head img{
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-right: 10px;
 }
 
-.dl_head h1{
-	vertical-align: top;
-	display: inline-block;
-	font-size: 200%;
-}
+/*.dl_head h1{*/
+	/*vertical-align: top;*/
+	/*display: inline-block;*/
+	/*font-size: 200%;*/
+/*}*/
 
-.download li{
-    list-style-position: inside;
-    list-style-type:disc;
-}
+/*.download li{*/
+    /*list-style-position: inside;*/
+    /*list-style-type:disc;*/
+/*}*/
 
-.download li a{
+.download li a,#welcome a{
     color: aquamarine;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
-.download li a:hover{
+.download li a:hover,#welcome a:hover{
 	color:aqua;
 }
 
@@ -277,33 +318,33 @@ p span{
 }
 
 #contact{
-    margin:35% 0;
+    /*margin:35% 0;*/
     margin-left: 30px;
 }
 
 .content{
-    width: 40%;
+    width: 45%;
     display: inline-block;
     vertical-align: top;
     margin-left: 5%;
 }
 
-.content h1{
-    font-size: 180%;
-    line-height: 150%;
-}
+/*.content h1{*/
+    /*font-size: 180%;*/
+    /*line-height: 150%;*/
+/*}*/
 
-.content h2{
-    font-size: 110%;
-    line-height: 150%;
-    margin-bottom:10px;
-}
+/*.content h2{*/
+    /*font-size: 110%;*/
+    /*line-height: 150%;*/
+    /*margin-bottom:10px;*/
+/*}*/
 
-.content p{
-    margin-left: 0;
-}
+/*.content p{*/
+    /*margin-left: 0;*/
+/*}*/
 
-.content li{
+.download li,.content li{
     list-style-position: inside;
     list-style-type:disc;
 }
@@ -313,17 +354,17 @@ p span{
 }
 
 footer{
-    position: fixed;
-    left: 6.5%;
+    /*position: fixed;*/
+    /*left: 6.5%;*/
     bottom:1%;
-    width: 13%;
-    max-width: 205px;
-    min-width: 190px;
-    text-align: center;
+    /*width: 13%;*/
+    /*max-width: 205px;*/
+    /*min-width: 190px;*/
+    /*text-align: center;*/
 }
 
 footer p{
-    margin-left: 0;
+    /*margin-left: 0;*/
     font-size: 60%;
 }
 
@@ -334,5 +375,5 @@ footer p{
     bottom:2%;
 }
 
-#go_home{
-}
+/*#go_home{*/
+/*}*/
