@@ -129,7 +129,7 @@
         });
         $(window).bind('scrollstart', function () {
             startCurrent.scroll = document.body.scrollTop;
-            start.position = get_position();
+            startCurrent.position = get_position();
         });
         $(window).bind('scrollstop', function(){
             change_bgimg();
