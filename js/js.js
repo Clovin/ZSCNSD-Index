@@ -33,7 +33,7 @@
     //  改变nav的avtive
     function add_active() {
         var pos = get_position();
-        console.log(pos);
+        // console.log(pos);
         var a=$("nav a");
         for(i=0;i<4;i++){
             a.eq(i).removeClass("active");
@@ -84,7 +84,8 @@
 
     //  点击nav事件
     function click_nav() {
-        var target = $($(event.target).attr("href"));
+        //TODO:参数为JQ元素，想要模拟点击对应的a标签元素，多加了一个参数试图让函数更灵活，滚动页面时模拟点击标签
+        var target =(arguments[1]) ? arguments[1].attr("href") : $($(event.target).attr("href"));
         var current = document.body.scrollTop;
         if(target!=='#main_content'){
             var temp = target.offset().top-230;
@@ -97,7 +98,26 @@
         event.preventDefault();
     }
 
+    //使用滚动滚轮时自动滚动到相邻位置
+
+    //大致思路：获取开始滚动是所在的position以及滚动条位置，滚动停止时获取所在的position及滚动条位置，
+    //判断是否跨越position，若跨越直接跳转到该position的标签，若未跨越，向上滚动则向上跳跃一个，向下滚动则向下跳跃一个
+    //目前写上的代码已测试可以正常工作
+    function autoScroll(startCurrent) {
+        var endCurrent = document.body.scrollTop;
+        if (startCurrent.position == get_position()) {  //当滚动完position未改变时
+            if(endCurrent > startCurrent.scroll){
+                //TODO：向下滚动，模拟点击下一个标签
+            }else{
+                //TODO：向上滚动，模拟点击上一个标签
+            }
+        }else{
+            //TODO：模拟点击对应position的标签
+        }
+    }
+
     $(document).ready(function () {
+        var startCurrent = {position: 0, scroll: 0};    //开始滚动时的滚动条位置
         change_size();
         change_bgimg();
         change_gt();
@@ -107,7 +127,14 @@
             add_active();
             change_gt();
         });
-        $(window).bind('scrollstop', change_bgimg);
+        $(window).bind('scrollstart', function () {
+            startCurrent.scroll = document.body.scrollTop;
+            start.position = get_position();
+        });
+        $(window).bind('scrollstop', function(){
+            change_bgimg();
+            autoScroll(startCurrent);
+        });
         $("#go_top a").click(function () {
             var current = document.body.scrollTop;
             move(current,0,current/40);
