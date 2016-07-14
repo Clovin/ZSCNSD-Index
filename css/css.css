@@ -1,6 +1,6 @@
 
 body{
-	font-family: 微软雅黑;
+	font-family: "Microsoft YaHei";
 	color: #FFFFFF;
 }
 
@@ -8,6 +8,11 @@ a{
 	color: #FFFFFF;
 }
 
+/*每个内容区通用的属性*/
+.contentBlock {
+    width: 100%;
+    height: 100%;
+}
 
 #background_shadow{
 	position: fixed;
@@ -60,15 +65,12 @@ a{
 }
 
 #nav > a{
-    display: block;
-    width:100%;
     height: 130px;
 }
 
 #nav a:hover{
 	background-color: rgba(0,0,0,0.5);
 	text-decoration: none;
-	color: #FFFFFF;
 }
 
 #main_content{
@@ -78,8 +80,6 @@ a{
 }
 
 #welcome{
-	width: 100%;
-	height: 100%;
 	text-align: right;
 	margin:35% 0;
     margin-top: 10%;
@@ -115,8 +115,6 @@ p span{
 }
 
 #instruction{
-	width: 100%;
-	height: 100%;
 	text-align: right;
 	margin:39% 0;
 }
@@ -140,8 +138,6 @@ p span{
 }
 
 #feature{
-	width: 100%;
-	height: 100%;
 	margin:35% 0;
 	margin-left: 30px;
 }
@@ -205,8 +201,6 @@ p span{
 }
 
 #convenient{
-	width: 100%;
-	height: 100%;
     margin:35% 0;
 	margin-left: 30px;
 }
@@ -283,8 +277,6 @@ p span{
 }
 
 #contact{
-    width: 100%;
-    height: 100%;
     margin:35% 0;
     margin-left: 30px;
 }

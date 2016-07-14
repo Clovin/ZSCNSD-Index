@@ -84,8 +84,9 @@
 
     //  点击nav事件
     function click_nav() {
-        //TODO:参数为JQ元素，想要模拟点击对应的a标签元素，多加了一个参数试图让函数更灵活，滚动页面时模拟点击标签
-        var target =(arguments[1]) ? arguments[1].attr("href") : $($(event.target).attr("href"));
+        //参数为JQ元素，想要模拟点击对应的a标签元素，多加了一个参数试图让函数更灵活，滚动页面时模拟点击标签
+        // var target =(arguments[1]) ? arguments[1].attr("href") : $($(event.target).attr("href"));
+        var target = $($(event.target).attr("href"));
         var current = document.body.scrollTop;
         if(target!=='#main_content'){
             var temp = target.offset().top-230;
@@ -107,12 +108,19 @@
         var endCurrent = document.body.scrollTop;
         if (startCurrent.position == get_position()) {  //当滚动完position未改变时
             if(endCurrent > startCurrent.scroll){
-                //TODO：向下滚动，模拟点击下一个标签
+                console.log("down");
+                //向下滚动，模拟点击下一个标签
+                if($($('a.active').parent().next('li')))
+                    $('a.active').parent().next('li').children('a').click();
             }else{
-                //TODO：向上滚动，模拟点击上一个标签
+                console.log("up");
+                //向上滚动，模拟点击上一个标签
+                if($($('a.active').parent().prev('li')))
+                    $('a.active').parent().prev('li').children('a').click();
             }
         }else{
-            //TODO：模拟点击对应position的标签
+            //模拟点击对应position的标签
+            $('a.active').click();
         }
     }
 
