@@ -1,5 +1,5 @@
 /**
- * Created by XX && Lunzi on 2016/7/13.
+ * Created by XX on 2016/7/13.
  */
 
 //  改变大小
@@ -19,6 +19,42 @@ function move(current, t, step) {
 			current = current - step;
 			move(current, t, step);
 		}, 12.5);
+	} else {
+		add_active();
+	}
+}
+
+//改变背景图片
+function change_bgimg(which) {
+	$("#background_img").attr("src",which);
+}
+
+//改变nav的avtive
+function add_active() {
+	var pos = get_position();
+	console.log(pos);
+	var a=$("nav a");
+	for(i=0;i<4;i++){
+		a.eq(i).removeClass("active");
+	}
+	if (pos!==-1){
+		a.eq(pos).addClass("active");
+	}
+}
+
+//获取当前所处位置
+function get_position() {
+	// var offset_width=$(window).width();
+	var oh=$(window).height()*0.3;   //获取margin大小
+	var height=[oh*1.5 + 185,oh*2.5+408,oh*3.5+837,oh*4.5+1217];  //各个块的位置
+	var current=$(document).scrollTop();
+	for(var i=0;i<4;++i){
+		if (current<height[i]){
+			return i-1;
+		}
+	}
+	if (i===4){
+		return 3;
 	}
 }
 
@@ -40,6 +76,7 @@ $(document).ready(function () {
 	$("#nav>a").click(function () {   //点击LOGO事件
 		var current = document.body.scrollTop;
 		move(current,0,current / 40);
+
 		event.preventDefault();
 	});
 });
