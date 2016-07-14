@@ -12,25 +12,35 @@
 </head >
 <body >
 	<div id="background_shadow"></div>
-	<img id="background_img" src="img/bg1.jpg">
+	<img id="background_img" src="img/bg0.jpg">
+	<div id="go_top"><a href="javascript:;"><img src="img/arrow-up.png"></a></div>
 	<section id="nav">
-		<a href="" id="go_home"><p>LOGO</p></a>
+		<a href="#main_content" id="go_home">
+            <img src="img/logo.png" style="width:100%;padding-top: 40px;">
+        </a>
 		<nav>
 			<ul>
 				<li><a href="#instruction">网维简介</a></li>
 				<li><a href="#feature">技能点</a></li>
 				<li><a href="#convenient">便捷导航</a></li>
-				<li><a href="#contact">联系方式</a></li>
+				<li><a href="#contact">报修及投诉</a></li>
 			</ul>
 		</nav>
 	</section>
 	<section id="main_content">
 		<article id="welcome">
-			<h1>Hello,Welcome to <br>our website</h1>
-			<p>欢迎来到中山学院网维官网，很高兴您的到来</p>
+			<h1>Hello,Welcome to <br>our Website</h1>
+            <img src="img/webchat2.png" style="width: 350px;height:350px">
+            <p>欢迎扫描左侧二维码进行微信报修，更多报修方式详情参见二维码<br><br>
+                <span>声明：断网设置是由运营商直接设置的，与网维无关如果发现断网设
+                    置异常及时反应我们会协助用户和运营商沟通纠正错误。</span><br><br>
+                天翼客户端提示与WiFi共享软件冲突的解决方法传送门：
+                <a href="http://zsteduapp.10000.gd.cn/More/ConflictResolution/index.html"
+                  target="_blank">传送门</a>
+            </p>
 		</article>
 		<article id="instruction">
-			<h1>网络维护科</h1>
+			<h1>关于我们</h1>
 			<p>网络维护科是由学院信息中心直接领导的学生组织，主要职责包括保障<br>
 			   校内师生的正常上网，处理和协助处理校园网出现的各类问题，以及协<br>
 			   助处理校园网出现的各类问题，以及协助进行开户等其他相关的工作.</p>
@@ -91,7 +101,7 @@
                     <li>提示无法获取IP，请联系10000号确认账号状态</li>
                     <li>貌似差不多就这些了</li>
                 </ul>
-                <a href="http://zsteduapp.10000.gd.cn/More/ConflictResolution/index.html" class="button">下载天翼客户端</a>
+                <a href="http://zsteduapp.10000.gd.cn/" class="button">下载天翼客户端</a>
 			</div>
             <div class="download">
                 <div class="dl_head">
@@ -100,10 +110,10 @@
                 </div>
                 <p>这里都是常用的快捷链接噢，比如电信充值网站啥的，不记得就直接点吧</p>
                 <ul>
-                    <li><a href="util.sola.love/yue.html">宽带账户余额查询</a></li>
-                    <li><a href="http://gd.189.cn/webpay/chongzhi/czindex.jsp">宽带充值</a></li>
-                    <li><a href="http://www2.zsc.edu.cn/xxzx/">信息中心官方网址</a></li>
-                    <li><a href="http://jwgl.zsc.edu.cn:90/(gytibee5pqsqm5ujo4sfbxru)/default2.aspx">学院教务管理</a></li>
+                    <li><a href="http://util.sola.love/yue.html" target="_blank">宽带账户余额查询</a></li>
+                    <li><a href="http://gd.189.cn/webpay/chongzhi/czindex.jsp" target="_blank">宽带充值</a></li>
+                    <li><a href="http://www2.zsc.edu.cn/xxzx/" target="_blank">信息中心官方网址</a></li>
+                    <li><a href="http://jwgl.zsc.edu.cn:90/(gytibee5pqsqm5ujo4sfbxru)/default2.aspx" target="_blank">学院教务管理</a></li>
                 </ul>
             </div>
 		</article>
@@ -126,9 +136,12 @@
             </div>
         </article>
 	</section>
-
+	<footer>
+		<p>© 2016/7/13 XX</p>
+	</footer>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script src="js/scroll_stop.js"></script>
 	<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 	<script src="js/js.js"></script>
 </body >

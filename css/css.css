@@ -82,6 +82,7 @@ a{
 	height: 100%;
 	text-align: right;
 	margin:35% 0;
+    margin-top: 10%;
 }
 
 #welcome h1{
@@ -89,8 +90,28 @@ a{
 	margin-bottom: 10px;
 }
 
+/*#welcome h2{*/
+    /*font-size:140%;*/
+    /*width: 40%;*/
+/*}*/
+p span{
+    font-size:140%;
+    color:cornflowerblue;
+}
+
 #welcome p{
 	font-size:130%;
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: left;
+}
+
+#welcome img{
+    display: inline-block;
+}
+#welcome a{
+    color: aquamarine;
 }
 
 #instruction{
@@ -297,4 +318,29 @@ a{
 
 .active{
     background-color: rgba(0,0,0,0.3);
+}
+
+footer{
+    position: fixed;
+    left: 6.5%;
+    bottom:1%;
+    width: 13%;
+    max-width: 205px;
+    min-width: 190px;
+    text-align: center;
+}
+
+footer p{
+    margin-left: 0;
+    font-size: 60%;
+}
+
+#go_top{
+    display: none;
+    position: fixed;
+    left: 2%;
+    bottom:2%;
+}
+
+#go_home{
 }
