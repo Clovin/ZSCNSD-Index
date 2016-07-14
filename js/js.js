@@ -85,9 +85,9 @@
     //  点击nav事件
     function click_nav() {
         var target = $($(event.target).attr("href"));
+        var current = document.body.scrollTop;
         if(target!=='#main_content'){
             var temp = target.offset().top-230;
-            var current = document.body.scrollTop;
             var t = 0;
             var step = (current - temp) / 40;
             move(current, t, step);
@@ -108,6 +108,11 @@
             change_gt();
         });
         $(window).bind('scrollstop', change_bgimg);
+        $("#go_top a").click(function () {
+            var current = document.body.scrollTop;
+            move(current,0,current/40);
+            event.preventDefault();
+        })
     });
 })();
 
