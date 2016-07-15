@@ -9,6 +9,7 @@
             .css("width",$(window).width());
         $("#background_shadow").css("height",$(window).height())
             .css("width",$(window).width());
+        width = $(window).width();
     }
 
     //  移动滚动条
@@ -177,7 +178,9 @@
 
         //  鼠标拖动滚动条事件    （需要修复）
         var flag = false,
-            flag1 = false;
+            flag1 = false,
+            flag2 = false,
+            width = $(window).width();
         window.onmousedown = function(){
             flag = true;
         };
@@ -185,9 +188,16 @@
             flag1 = true;
         };
         window.onmouseup = function(){
-            if(flag && flag1) autoSearch();
+            if(flag && flag1 &&flag2) autoSearch();
             flag = flag1 = false;
         };
+        $(window).mousemove(function () {
+            if (event.pageX<width-20){
+                flag2=false;
+            } else {
+                flag2 = true;
+            }
+        });
 
         //  鼠标滚轮滚动事件
         $(window).mousewheel(autoScroll);
@@ -202,7 +212,7 @@
             var current = document.body.scrollTop;
             move(current,0,current/40);
             event.preventDefault();
-        })
+        });
     });
 })();
 
