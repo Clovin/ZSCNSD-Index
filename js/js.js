@@ -3,6 +3,9 @@
  */
 
 (function () {
+
+    var width;   //视口宽度
+
     //  改变大小
     function change_size() {
         $("#background_img").css("height",$(window).height())
@@ -56,8 +59,6 @@
 
     //  获取当前所处位置
     function get_position() {
-        // var oh=$(window).height()*0.3;   //获取margin大小
-        // var height=[oh*1.5 + 185,oh*2.5+408,oh*3.5+837,oh*4.5+1217];  //各个块的位置
         var height1=[1200,2400,3800,5000];
         var current=$(document).scrollTop();
         for(var i=0;i<4;++i){
@@ -134,63 +135,64 @@
     }
 
     // 鼠标拖动滚动条事件
-    function autoSearch() {
+    function autoSearch(change_Y) {
         var height=[1340,2624,4000,5424];
         var index=get_position();
         var endCurrent = document.body.scrollTop;
-        var temp = height[index];
-        var step = (endCurrent - temp) / 40;
-        move(endCurrent, 0, step);
+        if(change_Y > 0){
+            if (index == 4){
+                move(endCurrent,0,(endCurrent-10)/40);
+            } else {
+                var temp = height[index];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
+            }
+        } else {
+            if (index == 1){
+                move(endCurrent,0,(endCurrent-10)/40);
+            } else if(index == 0) {
+                var temp = height[3];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
+            } else {
+                var temp = height[index-1];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
+            }
+        }
     }
 
-
-    // //禁用鼠标滚轮
-    // function disabledMouseWheel() {
-    //     if (document.addEventListener) {
-    //         document.addEventListener('DOMMouseScroll', scrollFunc, false);
-    //     }//W3C
-    //     window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
-    // }
-    // function scrollFunc(evt) {
-    //     evt = evt || window.event;
-    //     if(evt.preventDefault) {
-    //         // Firefox
-    //         evt.preventDefault();
-    //         evt.stopPropagation();
-    //     } else {
-    //         // IE
-    //         evt.cancelBubble=true;
-    //         evt.returnValue = false;
-    //     }
-    //     return false;
-    // }
-
     $(document).ready(function () {
-        // var startCurrent = {position: 0, scroll: 0};    //开始滚动时的滚动条位置
         change_size();
         change_bgimg();
         change_gt();
         add_active();
         window.scrollTo(0, 10);
-        // disabledMouseWheel();
-        $(window).resize(change_size);    //  改变窗口大小事件
-        $("#nav a").click(click_nav);       //  点击nav事件
 
-        //  鼠标拖动滚动条事件    （需要修复）
+        //  改变窗口大小事件
+        $(window).resize(change_size);
+
+        //  点击nav事件
+        $("#nav a").click(click_nav);
+
+        //  鼠标拖动滚动条事件
         var flag = false,
             flag1 = false,
             flag2 = false,
-            width = $(window).width();
-        window.onmousedown = function(){
+            startY,
+            endY;
+        $(window).mousedown(function(){
             flag = true;
-        };
-        window.onscroll = function(){
+            startY = event.pageY;
+        });
+        $(window).scroll(function(){
             flag1 = true;
-        };
-        window.onmouseup = function(){
-            if(flag && flag1 &&flag2) autoSearch();
+        });
+        $(window).mouseup(function(){
+            endY = event.pageY;
+            if(flag && flag1 &&flag2) autoSearch(endY - startY);
             flag = flag1 = false;
-        };
+        });
         $(window).mousemove(function () {
             if (event.pageX<width-20){
                 flag2=false;
@@ -208,6 +210,8 @@
             change_gt();
             add_active();
         });
+
+        // 点击返回顶部事件
         $("#go_top a").click(function () {
             var current = document.body.scrollTop;
             move(current,0,current/40);
