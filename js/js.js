@@ -33,7 +33,6 @@
     //  改变nav的avtive
     function add_active() {
         var pos = get_position();
-        // console.log(pos);
         var a=$("nav a");
         for(i=0;i<4;i++){
             a.eq(i).removeClass("active");
@@ -56,15 +55,16 @@
 
     //  获取当前所处位置
     function get_position() {
-        var oh=$(window).height()*0.3;   //获取margin大小
-        var height=[oh*1.5 + 185,oh*2.5+408,oh*3.5+837,oh*4.5+1217];  //各个块的位置
+        // var oh=$(window).height()*0.3;   //获取margin大小
+        // var height=[oh*1.5 + 185,oh*2.5+408,oh*3.5+837,oh*4.5+1217];  //各个块的位置
+        var height1=[1200,2400,3800,5000];
         var current=$(document).scrollTop();
         for(var i=0;i<4;++i){
-            if (current<height[i]){
+            if (current < height1[i]){
                 return i;
             }
         }
-        if (i===4){
+        if (i==4){
             return 4;
         }
     }
@@ -73,7 +73,7 @@
     function change_bgimg() {
         var bg_img=$("#background_img");
         var current_img = bg_img.attr("src");
-        var pos=get_position()+2;
+        var pos=get_position();
         var change_img = "img/bg"+pos+".jpg";
         if (current_img !== change_img){
             bg_img.fadeTo(400,.8);
@@ -84,17 +84,16 @@
 
     //  点击nav事件
     function click_nav() {
-        //参数为JQ元素，想要模拟点击对应的a标签元素，多加了一个参数试图让函数更灵活，滚动页面时模拟点击标签
-        var target =(arguments[0].length) ? $(arguments[0].attr("href")) : $($(event.target).attr("href"));
-        // var target = $($(event.target).attr("href"));
+        var height=[1340,2624,4000,5424];
+        var index=$(event.target).attr("data-index");
         var current = document.body.scrollTop;
-        if(target!=='#main_content'){
-            var temp = target.offset().top-230;
+        if(index>=0){
+            var temp = height[index];
             var t = 0;
             var step = (current - temp) / 40;
             move(current, t, step);
         }else {
-            move(current,0,current/40);
+            move(current,0,(current-10)/40);
         }
         event.preventDefault();
     }
@@ -104,42 +103,100 @@
     //大致思路：获取开始滚动是所在的position以及滚动条位置，滚动停止时获取所在的position及滚动条位置，
     //判断是否跨越position，若跨越直接跳转到该position的标签，若未跨越，向上滚动则向上跳跃一个，向下滚动则向下跳跃一个
     //目前写上的代码已测试可以正常工作
-    function autoScroll(startCurrent) {
+    function autoScroll(event) {
+        var height=[1340,2624,4000,5424];
+        var index=get_position();
         var endCurrent = document.body.scrollTop;
-        if (startCurrent.position == get_position()) {  //当滚动完position未改变时
-            if(endCurrent > startCurrent.scroll){
-                //向下滚动，模拟点击下一个标签
-                if($($('a.active').parent().next('li')))
-                    click_nav($('a.active').parent().next('li').children('a'));
-            }else{
-                //向上滚动，模拟点击上一个标签
-                if($($('a.active').parent().prev('li')))
-                    click_nav($('a.active').parent().prev('li').children('a'));
+        if(event.deltaY < 0){
+            //向下滚动
+            if (index == 4){
+                move(endCurrent,0,(endCurrent-10)/40);
+            } else {
+                var temp = height[index];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
             }
         }else{
-            //模拟点击对应position的标签
-            click_nav($('a.active'));
+            //向上滚动
+            if (index == 1){
+                move(endCurrent,0,(endCurrent-10)/40);
+            } else if(index == 0) {
+                var temp = height[3];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
+            } else {
+                var temp = height[index-2];
+                var step = (endCurrent - temp) / 40;
+                move(endCurrent, 0, step);
+            }
         }
     }
 
+    // 鼠标拖动滚动条事件
+    function autoSearch() {
+        var height=[1340,2624,4000,5424];
+        var index=get_position();
+        var endCurrent = document.body.scrollTop;
+        var temp = height[index];
+        var step = (endCurrent - temp) / 40;
+        move(endCurrent, 0, step);
+    }
+
+
+    // //禁用鼠标滚轮
+    // function disabledMouseWheel() {
+    //     if (document.addEventListener) {
+    //         document.addEventListener('DOMMouseScroll', scrollFunc, false);
+    //     }//W3C
+    //     window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+    // }
+    // function scrollFunc(evt) {
+    //     evt = evt || window.event;
+    //     if(evt.preventDefault) {
+    //         // Firefox
+    //         evt.preventDefault();
+    //         evt.stopPropagation();
+    //     } else {
+    //         // IE
+    //         evt.cancelBubble=true;
+    //         evt.returnValue = false;
+    //     }
+    //     return false;
+    // }
+
     $(document).ready(function () {
-        var startCurrent = {position: 0, scroll: 0};    //开始滚动时的滚动条位置
+        // var startCurrent = {position: 0, scroll: 0};    //开始滚动时的滚动条位置
         change_size();
         change_bgimg();
         change_gt();
+        add_active();
+        window.scrollTo(0, 10);
+        // disabledMouseWheel();
         $(window).resize(change_size);    //  改变窗口大小事件
         $("#nav a").click(click_nav);       //  点击nav事件
-        $(window).scroll(function () {
-            add_active();
-            change_gt();
-        });
-        $(window).bind('scrollstart', function () {
-            startCurrent.scroll = document.body.scrollTop;
-            startCurrent.position = get_position();
-        });
+
+        //  鼠标拖动滚动条事件    （需要修复）
+        var flag = false,
+            flag1 = false;
+        window.onmousedown = function(){
+            flag = true;
+        };
+        window.onscroll = function(){
+            flag1 = true;
+        };
+        window.onmouseup = function(){
+            if(flag && flag1) autoSearch();
+            flag = flag1 = false;
+        };
+
+        //  鼠标滚轮滚动事件
+        $(window).mousewheel(autoScroll);
+
+        //  滚动静止事件
         $(window).bind('scrollstop', function(){
             change_bgimg();
-            autoScroll(startCurrent);
+            change_gt();
+            add_active();
         });
         $("#go_top a").click(function () {
             var current = document.body.scrollTop;
