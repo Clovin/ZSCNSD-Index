@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e452250-2493-4da5-a22f-07333f97311b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/cssreset-min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/css.css" afterPath="$PROJECT_DIR$/css/css.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/js.js" afterPath="$PROJECT_DIR$/js/js.js" />
     </list>
     <ignored path="ZSCNSD-Index.iws" />
@@ -30,7 +27,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="2261">
               <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -46,7 +43,7 @@
       <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="-4997">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
@@ -56,8 +53,8 @@
       <file leaf-file-name="js.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="157" column="43" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+            <state relative-caret-position="352">
+              <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -328,7 +325,7 @@
       <workItem from="1468496725523" duration="10420000" />
       <workItem from="1468518909825" duration="20130000" />
       <workItem from="1468585163230" duration="839000" />
-      <workItem from="1468586204594" duration="2792000" />
+      <workItem from="1468586204594" duration="4206000" />
     </task>
     <task id="LOCAL-00001" summary="Begin！！">
       <created>1468403257249</created>
@@ -341,7 +338,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76088000" />
+    <option name="totallyTimeSpent" value="77502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -644,9 +641,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/cssreset-min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="-4997">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
@@ -654,7 +659,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="2261">
           <caret line="128" column="32" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -666,18 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cssreset-min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="157" column="43" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+        <state relative-caret-position="352">
+          <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
           <folding />
         </state>
       </provider>

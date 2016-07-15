@@ -5,6 +5,7 @@
 (function () {
 
     var width;   //视口宽度
+    var index;    //判断区域位置
 
     //  改变大小
     function change_size() {
@@ -59,7 +60,7 @@
 
     //  获取当前所处位置
     function get_position() {
-        var height1=[1200,2400,3800,5000];
+        var height1=[1000,2500,3800,5000];
         var current=$(document).scrollTop();
         for(var i=0;i<4;++i){
             if (current < height1[i]){
@@ -137,9 +138,10 @@
     // 鼠标拖动滚动条事件
     function autoSearch(change_Y) {
         var height=[1340,2624,4000,5424];
-        var index=get_position();
         var endCurrent = document.body.scrollTop;
+        console.log(index);
         if(change_Y > 0){
+            //向下拖动
             if (index == 4){
                 move(endCurrent,0,(endCurrent-10)/40);
             } else {
@@ -148,14 +150,15 @@
                 move(endCurrent, 0, step);
             }
         } else {
-            if (index == 1){
+            //向上拖动
+            if (index - 2 == -1){
                 move(endCurrent,0,(endCurrent-10)/40);
-            } else if(index == 0) {
+            } else if(index - 2 == -2) {
                 var temp = height[3];
                 var step = (endCurrent - temp) / 40;
                 move(endCurrent, 0, step);
             } else {
-                var temp = height[index-1];
+                var temp = height[index - 2];
                 var step = (endCurrent - temp) / 40;
                 move(endCurrent, 0, step);
             }
@@ -184,6 +187,7 @@
         $(window).mousedown(function(){
             flag = true;
             startY = event.pageY;
+            index=get_position();
         });
         $(window).scroll(function(){
             flag1 = true;
